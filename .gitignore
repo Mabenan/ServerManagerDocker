@@ -1,0 +1,7 @@
+node_modules
+build
+public
+logs
+config.json
+ADMIN.pass
+ADMIN.pass2
