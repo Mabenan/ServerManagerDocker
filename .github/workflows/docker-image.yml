@@ -21,6 +21,8 @@ jobs:
         file: "web.zip"
         target: "web.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
-    - run: unzip web.zip -d public
+    - run: unzip web.zip -d tmp
+    - run: mkdir public
+    - run: cp -r tmp/build/web/* public
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag mabenan/servermanager:$(date +%s)
